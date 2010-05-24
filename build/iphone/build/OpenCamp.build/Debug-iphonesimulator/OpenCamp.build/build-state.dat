@@ -1,0 +1,473 @@
+TOpenCamp
+v7
+r0
+t296187929.176367
+cCheck dependencies
+cProcessInfoPlistFile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Info.plist Info.plist
+cPhaseScriptExecution "Run Script" /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Script-B4EA72B50FBC96AA005AA7FB.sh
+cCompileXIB /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/MainWindow.xib
+cCpResource build/Debug-iphonesimulator/OpenCamp.app/Default.png Resources/Default.png
+cCopyPlistFile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Entitlements.plist Resources/Entitlements.plist
+cProcessPCH /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch.gch OpenCamp_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/main.o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/ApplicationRouting.o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp normal i386
+cGenerateDSYMFile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app.dSYM /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp
+cTouch /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk
+c000000004A9F670A00000000000000EE
+t1251960586
+s238
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004A76576C00000000000120D0
+t1249269612
+s73936
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
+c000000004A765A9C000000000003E730
+t1249270428
+s255792
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+c000000004A89EA5B00000000000D4BE0
+t1250552411
+s871392
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004A7650200000000000193960
+t1249267744
+s1653088
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000004A76502300000000001097C0
+t1249267747
+s1087424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004A821911000000000026EE30
+t1250040081
+s2551344
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000004A77B121000000000004AFE0
+t1249358113
+s307168
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004A765094000000000027E880
+t1249267860
+s2615424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004A7650820000000000001355
+t1249267842
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/MapKit.framework/MapKit
+c000000004A7CC3E6000000000010EB60
+t1249690598
+s1108832
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+c000000004A860FEA00000000000CB600
+t1250299882
+s833024
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
+c000000004A7667960000000000069ED0
+t1249273750
+s433872
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c000000004A7651A70000000000018E90
+t1249268135
+s102032
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c000000004A765556000000000001F8E0
+t1249269078
+s129248
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000004A764F5A0000000000055360
+t1249267546
+s349024
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004A7C6E970000000000000788
+t1249668759
+s1928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004A7C6F5900000000016721E0
+t1249668953
+s23536096
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/usr/lib/libsqlite3.dylib
+c000000004A764E6900000000000C4CF0
+t1249267305
+s806128
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/usr/lib/libxml2.dylib
+c000000004A764F1F0000000000124950
+t1249267487
+s1198416
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk/usr/lib/libz.dylib
+c00000000476CCCD10000000000006EE8
+t1198312657
+s28392
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk
+c000000004BE0FCD00000000000000110
+t1273035984
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004B9F1E0B0000000000012140
+t1268719115
+s74048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
+c000000004B9F2554000000000003E8A0
+t1268720980
+s256160
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+c000000004B9F32170000000000128990
+t1268724247
+s1214864
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004B9F1D810000000000193D80
+t1268718977
+s1654144
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000004B9F1D6800000000001255B0
+t1268718952
+s1201584
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BA03AB3000000000026F020
+t1268791987
+s2551840
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000004BA18C610000000000060DB0
+t1268878433
+s396720
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004B9F1DE40000000000289C20
+t1268719076
+s2661408
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B9F1DD60000000000001355
+t1268719062
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/MapKit.framework/MapKit
+c000000004B9F323B0000000000160170
+t1268724283
+s1442160
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+c000000004B9F33530000000000117CE0
+t1268724563
+s1146080
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
+c000000004B9F326E0000000000084660
+t1268724334
+s542304
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c000000004B9F2556000000000005AF90
+t1268720982
+s372624
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c000000004B9F266D000000000001F9F0
+t1268721261
+s129520
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000004B9F1D0B0000000000055570
+t1268718859
+s349552
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004BA6CAEC000000000000098F
+t1269222124
+s2447
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004BA6CB31000000000214E400
+t1269222193
+s34923520
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/usr/lib/libsqlite3.dylib
+c000000004B9F1ABC00000000000E1D70
+t1268718268
+s925040
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/usr/lib/libxml2.dylib
+c000000004B9F1D990000000000122A80
+t1268719001
+s1190528
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/usr/lib/libz.dylib
+c00000000476CCCD10000000000006EE8
+t1198312657
+s28392
+
+N/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004B73BC540000000000CF0BF0
+t1265876052
+s13569008
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.h
+c000000004BF74086000000000000014D
+t1274495110
+s333
+i<Foundation/Foundation.h>
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m
+c000000004BF7408600000000000027B5
+t1274495110
+s10165
+i<Foundation/Foundation.h>
+i"ApplicationRouting.h"
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/OpenCamp_Prefix.pch
+c000000004BEE1AFB0000000000000086
+t1273895675
+s134
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/Default.png
+c000000004BF740870000000000014623
+t1274495111
+s83491
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/Entitlements.plist
+c000000004BEE1AFB00000000000000E1
+t1273895675
+s225
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/MainWindow.xib
+c000000004BF740870000000000003AF8
+t1274495111
+s15096
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/libTiCore.a
+c000000004BEE1C8E000000000C61F97C
+t1273896078
+s207747452
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/libTitanium.a
+c000000004BF740860000000000E84780
+t1274495110
+s15222656
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app
+t1274495129
+s544
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app.dSYM
+t1274495128
+s102
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Default.png
+t1274495117
+s83491
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Entitlements.plist
+t1274495117
+s62
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Info.plist
+t1274495116
+s654
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/MainWindow.nib
+t1274495121
+s947
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp
+t1274495125
+s4227072
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/PkgInfo
+t1274495116
+s8
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/ApplicationRouting.o
+t1274495122
+s16928
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/OpenCamp.LinkFileList
+c000000004BEE1C920000000000000140
+t1273896082
+s320
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/main.o
+t1274495122
+s11648
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Script-B4EA72B50FBC96AA005AA7FB.sh
+c000000004BEE1C9200000000000001B8
+t1273896082
+s440
+
+N/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m
+c000000004BF740870000000000000654
+t1274495111
+s1620
+i<UIKit/UIKit.h>
+
+N/var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-eywkcsxabyzphcfivahvywzlexwp/OpenCamp_Prefix.pch.gch
+t1273896551
+s13797264
+
+N/var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch.gch
+t1273896088
+s13018576
+
+NInfo.plist
+c000000004BF7408700000000000003D2
+t1274495111
+s978
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies296187914#296187916#0(0"0(0#1#0"5279993715474057216#0"0#
+
+CCompileC build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/ApplicationRouting.o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s296187921.376892
+e296187922.196102
+r1
+xCompileC
+xbuild/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/ApplicationRouting.o
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Compile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m296187921#296187922#0(0"0(0#0#96"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m4301231320#2318"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__LOG__ID__=376d5fad-e7e1-44ae-a1d6-37dedc57c6eb -DDEPLOYTYPE=development -DDEBUG=1 -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-generated-files.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-own-target-headers.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-all-target-headers.hmap -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-project-headers.hmap -F/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/include -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources/i386 -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources -include /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch -c /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Classes/ApplicationRouting.m -o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/ApplicationRouting.o0#
+
+CCompileC build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/main.o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s296187921.375879
+e296187922.204349
+r1
+xCompileC
+xbuild/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/main.o
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m296187921#296187922#0(0"0(0#0#74"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m4301231320#2282"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__LOG__ID__=376d5fad-e7e1-44ae-a1d6-37dedc57c6eb -DDEPLOYTYPE=development -DDEBUG=1 -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-generated-files.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-own-target-headers.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-all-target-headers.hmap -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-project-headers.hmap -F/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/include -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources/i386 -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources -include /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch -c /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/main.m -o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/MainWindow.xib
+s296187917.138540
+e296187921.375275
+r1
+xCompileXIB
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/MainWindow.xib
+lSLF07#2@35"CompileXIB Resources/MainWindow.xib296187917#296187921#0(0"0(0#0#92"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/MainWindow.xib4301231320#578"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/MainWindow.nib /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/MainWindow.xib0#
+
+CCopyPlistFile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Entitlements.plist Resources/Entitlements.plist
+s296187917.140024
+e296187917.664050
+r1
+xCopyPlistFile
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Entitlements.plist
+xResources/Entitlements.plist
+lSLF07#2@33"Copy Resources/Entitlements.plist296187917#296187917#0(0"0(0#0#96"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/Entitlements.plist4301231320#462"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist --convert binary1 Resources/Entitlements.plist --outdir /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app0#
+
+CCpResource build/Debug-iphonesimulator/OpenCamp.app/Default.png Resources/Default.png
+s296187917.139438
+e296187917.392854
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/OpenCamp.app/Default.png
+xResources/Default.png
+lSLF07#2@26"Copy Resources/Default.png296187917#296187917#0(0"0(0#0#89"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/Default.png4301231320#553"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Resources/Default.png /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app0#
+
+CGenerateDSYMFile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app.dSYM /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp
+s296187925.146935
+e296187929.107578
+r1
+xGenerateDSYMFile
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app.dSYM
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/OpenCamp.app.dSYM build/Debug-iphonesimulator/OpenCamp.app/OpenCamp296187925#296187929#0(0"0(0#0#117"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp4301231320#473"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp -o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app.dSYM0#
+
+CLd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp normal i386
+s296187922.204450
+e296187925.146618
+r1
+xLd
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp
+xnormal
+xi386
+lSLF07#2@122"Link /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp296187922#296187925#0(0"0(0#0#0"4301231320#1505"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk -L/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator -L/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone -LResources -F/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator -filelist /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/OpenCamp.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -ObjC -lstdc++ -framework SystemConfiguration -framework AVFoundation -framework CoreLocation -lz -framework AudioToolbox -framework Foundation -weak_framework UIKit -framework MediaPlayer -framework CoreGraphics -weak-lTitanium -lsqlite3 -framework MessageUI -framework OpenGLES -framework QuartzCore -framework MapKit -framework AddressBook -framework AddressBookUI -framework CFNetwork -framework MobileCoreServices -lTiCore -lxml2 -o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/OpenCamp0#
+
+CPhaseScriptExecution "Run Script" /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Script-B4EA72B50FBC96AA005AA7FB.sh
+s296187916.988885
+e296187917.138216
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Script-B4EA72B50FBC96AA005AA7FB.sh
+lSLF07#2@36"Run custom shell script 'Run Script'296187916#296187917#0(0"0(0#0#0"4301231320#18567"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER elofland    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_UNIVERSAL_IPHONE_OS i386    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build    setenv BUILD_ROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator    setenv CACHE_ROOT /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502    setenv CCHROOT /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app    setenv CODE_SIGN_ENTITLEMENTS Resources/Entitlements.plist    setenv CODE_SIGN_IDENTITY "Don't Code Sign"    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator    setenv CONFIGURATION_TEMP_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator    setenv CONTENTS_FOLDER_PATH OpenCamp.app    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH /Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/OpenCamp.dst    setenv DWARF_DSYM_FILE_NAME OpenCamp.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator    setenv EFFECTIVE_PLATFORM_NAME -iphonesimulator    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH OpenCamp.app/Executables    setenv EXECUTABLE_FOLDER_PATH OpenCamp.app    setenv EXECUTABLE_NAME OpenCamp    setenv EXECUTABLE_PATH OpenCamp.app/OpenCamp    setenv FILE_LIST /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH OpenCamp.app/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME OpenCamp.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD c99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER OpenCamp_Prefix.pch    setenv GCC_PREPROCESSOR_DEFINITIONS "__LOG__ID__=376d5fad-e7e1-44ae-a1d6-37dedc57c6eb DEPLOYTYPE=development DEBUG=1"    setenv GCC_PRODUCT_TYPE_PREPROCESSOR_DEFINITIONS " __IPHONE_OS_VERSION_MIN_REQUIRED=30000"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GCC_VERSION_IDENTIFIER __2    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/include\" "    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH OpenCamp.app/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH /InfoPlist.strings    setenv INSTALL_DIR /tmp/OpenCamp.dst/Users/elofland/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER elofland    setenv INSTALL_PATH /Users/elofland/Applications    setenv INSTALL_ROOT /tmp/OpenCamp.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 3.1    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH OpenCamp.app/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-LinkMap-normal-i386.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator\"  \"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone\" Resources"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal/i386/OpenCamp.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv MAC_OS_X_VERSION_ACTUAL 1063    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0603    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Objects-normal    setenv OBJROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS "-framework Foundation -framework UIKit -ObjC -lstdc++"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH OpenCamp.app/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/PkgInfo    setenv PKGINFO_PATH OpenCamp.app/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/usr    setenv PLATFORM_DIR /Developer/Platforms/iPhoneSimulator.platform    setenv PLATFORM_NAME iphonesimulator    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH OpenCamp.app/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH OpenCamp.app/PrivateHeaders    setenv PRODUCT_NAME OpenCamp    setenv PRODUCT_SETTINGS_PATH /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT OpenCamp    setenv PROJECT_DERIVED_FILE_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/DerivedSources    setenv PROJECT_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv PROJECT_FILE_PATH /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/OpenCamp.xcodeproj    setenv PROJECT_NAME OpenCamp    setenv PROJECT_TEMP_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build    setenv PUBLIC_HEADERS_FOLDER_PATH OpenCamp.app/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH OpenCamp.app/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk    setenv SDK_DIR /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk    setenv SDK_NAME iphonesimulator3.1    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH OpenCamp.app/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH OpenCamp.app/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv SRCROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/SymbolRepositories    setenv SYMROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY iPhone    setenv TARGETNAME OpenCamp    setenv TARGET_BUILD_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator    setenv TARGET_NAME OpenCamp    setenv TARGET_TEMP_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build    setenv TEMP_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build    setenv TEMP_FILES_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build    setenv TEMP_FILE_DIR /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build    setenv TEMP_ROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build    setenv UID 502    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH OpenCamp.app    setenv UNSTRIPPED_PRODUCT NO    setenv USER elofland    setenv USER_APPS_DIR /Users/elofland/Applications    setenv USER_LIBRARY_DIR /Users/elofland/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS i386    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH OpenCamp.app/version.plist    setenv VERSION_INFO_BUILDER elofland    setenv VERSION_INFO_FILE OpenCamp_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:OpenCamp  PROJECT:OpenCamp-\""    setenv WEB_SRC_ROOT /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/tmp    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME OpenCamp.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_VERSION_ACTUAL 0322    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    /bin/sh -c /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/Script-B4EA72B50FBC96AA005AA7FB.sh0#
+
+CProcessInfoPlistFile /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Info.plist Info.plist
+s296187916.973394
+e296187916.988693
+r1
+xProcessInfoPlistFile
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist296187916#296187916#0(0"0(0#0#78"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/Info.plist30399800003068008#560"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Info.plist -genpkginfo /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app/Info.plist0#
+
+CProcessPCH /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-eywkcsxabyzphcfivahvywzlexwp/OpenCamp_Prefix.pch.gch OpenCamp_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s295589349.847304
+e295589351.738432
+r1
+xProcessPCH
+x/var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-eywkcsxabyzphcfivahvywzlexwp/OpenCamp_Prefix.pch.gch
+xOpenCamp_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile OpenCamp_Prefix.pch295589349#295589351#0(0"0(0#0#87"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/OpenCamp_Prefix.pch4301231320#2144"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__LOG__ID__=376d5fad-e7e1-44ae-a1d6-37dedc57c6eb -DDEPLOYTYPE=development -DDEBUG=1 -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-generated-files.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-own-target-headers.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-all-target-headers.hmap -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-project-headers.hmap -F/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/include -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources/i386 -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources -c /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/OpenCamp_Prefix.pch -o /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-eywkcsxabyzphcfivahvywzlexwp/OpenCamp_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch.gch OpenCamp_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s295588887.521521
+e295588889.029208
+r1
+xProcessPCH
+x/var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch.gch
+xOpenCamp_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile OpenCamp_Prefix.pch295588887#295588889#0(0"0(0#0#87"/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/OpenCamp_Prefix.pch8171268569097987072#2144"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__LOG__ID__=376d5fad-e7e1-44ae-a1d6-37dedc57c6eb -DDEPLOYTYPE=development -DDEBUG=1 -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-generated-files.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-own-target-headers.hmap -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-all-target-headers.hmap -iquote /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/OpenCamp-project-headers.hmap -F/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/include -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources/i386 -I/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/OpenCamp.build/Debug-iphonesimulator/OpenCamp.build/DerivedSources -c /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/OpenCamp_Prefix.pch -o /var/folders/9w/9w4Tpw3PH20jBSbX-mS2gE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/OpenCamp_Prefix-fqlbtevlrduzyigxaoxqrteuwcbz/OpenCamp_Prefix.pch.gch0#
+
+CTouch /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app
+s296187929.107786
+e296187929.176132
+r1
+xTouch
+x/Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app
+lSLF07#2@114"Touch /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app296187929#296187929#0(0"0(0#0#0"4301231320#337"    cd /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/elofland/Documents/hype_anvil/titanium/OpenCamp/build/iphone/build/Debug-iphonesimulator/OpenCamp.app0#
+
