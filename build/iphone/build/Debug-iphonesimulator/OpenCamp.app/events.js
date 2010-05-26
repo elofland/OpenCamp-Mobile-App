@@ -3,8 +3,9 @@ var data = [];
 
 var xhr = Ti.Network.createHTTPClient();
 //xhr.open("GET","http://v2.0.news.tmg.s3.amazonaws.com/feeds/news.xml");
-//xhr.open("GET","http://openca.mp/feed/rss/");
-xhr.open("GET","http://pigskinradio.com/?feed=rss");
+xhr.open("GET","http://openca.mp/feed/rss/");
+
+//xhr.open("GET","http://v2.0.news.tmg.s3.amazonaws.com/feeds/news.xml");
 
 xhr.onload = function()
 {

@@ -69,16 +69,18 @@ var aboutBtn = Titanium.UI.createButton({
 });
 
 
-eventBtn.addEventListener("click", function(e){
+eventBtn.addEventListener("click", function()
+{
 	var win = Titanium.UI.createWindow({
 		url:"events.js",
+		backgroundColor:'#3366990',		
 		title:"OpenCamp Events"
 	});
 	var closeBtn = Titanium.UI.createButton({
 	     title:'Close',
 	     style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
 	});
-	win.open;
+	win.open();
 	//Titanium.UI.currentTab.open(win,{animated:true});
 });
 
@@ -91,7 +93,7 @@ mapBtn.addEventListener("click", function(e){
 	   title:'Close',
 	   style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
 	});
-	win.open;
+	win.open();
 });
 
 
