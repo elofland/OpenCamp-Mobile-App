@@ -2,16 +2,16 @@
 Titanium.UI.setBackgroundColor('#000');
 
 // create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+//var tabGroup = Titanium.UI.createTabGroup();
 
 
 //
 // create base UI tab and root window
 //
-var win1 = Titanium.UI.createWindow({  
+var rootWin = Titanium.UI.createWindow({
     title:'OpenCamp',
     titleImage:'images/OpenCampLogoHeader.png',
-    fullscreen:1,
+    fullscreen:false,
     backgroundColor:'#fff'
 });
 
@@ -89,7 +89,7 @@ eventBtn.addEventListener("click", function()
 	
 	// view tests
 	/*
-	win1.add(eventView);
+	rootWin.add(eventView);
 	var eventView = Titanium.UI.createView({
 		url:"events.js",
 		backgroundColor:'3366990',
@@ -100,7 +100,7 @@ eventBtn.addEventListener("click", function()
 });
 
 mapBtn.addEventListener("click", function(e){
-	var win = Titanium.UI.createWindow({
+	var mapWin = Titanium.UI.createWindow({
 		url:"maps.js",
 		title:"OpenCamp Maps"
 	});
@@ -108,12 +108,18 @@ mapBtn.addEventListener("click", function(e){
 	   title:'Close',
 	   style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
 	});
-	win.open();
+	var b = Titanium.UI.createButton({title:'Left Nav'});
+	mapWin.leftNavButton = b;
+	mapWin.open();
 });
 
 
 socialBtn.addEventListener("click", function(e){
-	alert("OpenCamp Social Media");
+	var socBtn = Titanium.UI.createWindow({
+		url:"twitter.js",
+		title:"OpenCamp Social Media"
+	});
+	socBtn.open();
 });
 
 speakersBtn.addEventListener("click", function(e){
@@ -129,20 +135,22 @@ aboutBtn.addEventListener("click", function(e){
 });
 
 
-win1.add(eventBtn);
-win1.add(mapBtn);
-win1.add(socialBtn);
-win1.add(speakersBtn);
-win1.add(miscBtn);
-win1.add(aboutBtn);
+rootWin.add(eventBtn);
+rootWin.add(mapBtn);
+rootWin.add(socialBtn);
+rootWin.add(speakersBtn);
+rootWin.add(miscBtn);
+rootWin.add(aboutBtn);
 
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'OpenCamp',
-    window:win1
-});
+rootWin.open()
 
-win1.hideTabBar();
+//var tab1 = Titanium.UI.createTab({  
+//   icon:'KS_nav_views.png',
+//    title:'OpenCamp',
+//    window:rootWin
+//});
+
+//rootWin.hideTabBar();
 /*
 var label1 = Titanium.UI.createLabel({
 	color:'#999',
@@ -152,18 +160,18 @@ var label1 = Titanium.UI.createLabel({
 	width:'auto'
 });
 
-win1.add(label1);
+rootWin.add(label1);
 */
 
 //  add tabs
-tabGroup.addTab(tab1);  
+//tabGroup.addTab(tab1);  
 //tabGroup.addTab(tab2);  
 
 
 
 
 // open tab group
-tabGroup.open();
+//tabGroup.open();
 
 
 /*var view = Titanium.UI.createView({
@@ -172,7 +180,7 @@ tabGroup.open();
    width:50,
    height:50
 });
-win1.add(view);
+rootWin.add(view);
 
 
 var win = Titanium.UI.createWindow({
