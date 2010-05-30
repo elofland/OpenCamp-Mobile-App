@@ -2,16 +2,16 @@
 Titanium.UI.setBackgroundColor('#000');
 
 // create tab group
-//var tabGroup = Titanium.UI.createTabGroup();
+var tabGroup = Titanium.UI.createTabGroup();
 
 
 //
 // create base UI tab and root window
 //
-var rootWin = Titanium.UI.createWindow({
+var rootWin = Titanium.UI.createWindow({  
     title:'OpenCamp',
     titleImage:'images/OpenCampLogoHeader.png',
-    fullscreen:false,
+    fullscreen:1,
     backgroundColor:'#fff'
 });
 
@@ -69,57 +69,121 @@ var aboutBtn = Titanium.UI.createButton({
 });
 
 
-eventBtn.addEventListener("click", function()
-{
+eventBtn.addEventListener("click", function(e){
 	var eventWin = Titanium.UI.createWindow({
 		url:"events.js",
 		backgroundColor:'#3366990',		
 		title:"OpenCamp Events"
 	});
-	
-	/*
-	var closeBtn = Titanium.UI.createButton({
-	     title:'Close',
-	     style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+		var closeBtn = Titanium.UI.createButton({
+			top:0,
+			left:270,
+			height:30,
+			width:50,
+		    title:'Close',
+		    style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+		});
+		closeBtn.addEventListener('click', function()
+		    {
+		       eventWin.close();
+		    });
+		
+		eventWin.add(closeBtn);
+		
+		eventWin.open();
+		//Titanium.UI.currentTab.open(eventWin,{animated:true});
 	});
-	eventWin.add(closeBtn);
-	*/
-	eventWin.open();
-	//Titanium.UI.currentTab.open(win,{animated:true});
 	
-	// view tests
-	/*
-	rootWin.add(eventView);
-	var eventView = Titanium.UI.createView({
-		url:"events.js",
-		backgroundColor:'3366990',
-		title:"OpenCamp Events"
-	})
-	*/
-	
-});
-
-mapBtn.addEventListener("click", function(e){
-	var mapWin = Titanium.UI.createWindow({
-		url:"maps.js",
-		title:"OpenCamp Maps"
-	});
-	var closeBtn = Titanium.UI.createButton({
-	   title:'Close',
-	   style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
-	});
-	var b = Titanium.UI.createButton({title:'Left Nav'});
-	mapWin.leftNavButton = b;
-	mapWin.open();
-});
-
+	mapBtn.addEventListener("click", function(e){
+		var mapWin = Titanium.UI.createWindow({
+			url:"maps.js",
+			//url:"map_view.js",
+			title:"OpenCamp Maps",
+			barColor:'#111'
+		
+		});
+		var bb1 = Titanium.UI.createButtonBar({
+		    labels:['One', 'Two', 'Three'],
+		    backgroundColor:'#336699',
+		    top:50,
+		    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+		    height:25
+		    //width:200
+		});
+		mapWin.add(bb1);
+/*		var closeBtn = Titanium.UI.createButton({
+		   title:'Close',
+		   style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+		});
+		var b = Titanium.UI.createButton({title:'Left Nav'});
+		mapWin.leftNavButton = b;
+  */
+  		mapWin.open();
+  
+   });
+   
+   /*
+   b7.addEventListener('click', function()
+   {
+           if (!leftnav)
+           {
+                   var b = Titanium.UI.createButton({title:'Left Nav'});
+                   win.leftNavButton = b;
+                   leftnav = true;
+           }
+           else
+           {
+                   win.setLeftNavButton(null);
+                   leftnav = false;
+           }
+   });
+   
+   win.add(b7);
+   
+   */
 
 socialBtn.addEventListener("click", function(e){
-	var socBtn = Titanium.UI.createWindow({
+	var socWin = Titanium.UI.createWindow({
 		url:"twitter.js",
 		title:"OpenCamp Social Media"
 	});
-	socBtn.open();
+	//var backBtn = Titanium.UI.createButton({title:'Back'});
+	//socWin.leftNavButton = backBtn;
+	//socWin.open();  
+	var socButtonBar = Titanium.UI.createButtonBar({
+	    labels:['OCDFW', 'Committee', 'Attendees', 'Sponsors'],
+	    //backgroundColor:'#336699',
+	    backgroundColor:'#13386c',
+	    bottom:0,
+	    style:Titanium.UI.iPhone.SystemButtonStyle.BAR.BORDERED,
+		//width:auto,
+	    height:25
+	    //font:{fontSize:10}
+	    //width:200
+	});
+//	socButtonBar.addEventListener('click', function(e)
+//   {
+//
+//		if (e.index == 0)
+//		{
+//			alert("OCDFW");
+//			Titanium.API.info('OCDFW');
+//		}
+//		else if (e.index == 1)
+//		{
+//			alert("Committee");
+//		}
+//		else if (e.index == 2)
+//		{
+//			alert("Attendees");
+//		}
+//		else if (e.index == 3)
+//		{
+//			alert("Sponsors");
+//		}
+//    });
+socWin.add(socButtonBar);
+socWin.open();
 });
 
 speakersBtn.addEventListener("click", function(e){
@@ -142,15 +206,13 @@ rootWin.add(speakersBtn);
 rootWin.add(miscBtn);
 rootWin.add(aboutBtn);
 
-rootWin.open()
+var tab1 = Titanium.UI.createTab({  
+    icon:'KS_nav_views.png',
+    title:'OpenCamp',
+    window:rootWin
+});
 
-//var tab1 = Titanium.UI.createTab({  
-//   icon:'KS_nav_views.png',
-//    title:'OpenCamp',
-//    window:rootWin
-//});
-
-//rootWin.hideTabBar();
+rootWin.hideTabBar();
 /*
 var label1 = Titanium.UI.createLabel({
 	color:'#999',
@@ -164,14 +226,14 @@ rootWin.add(label1);
 */
 
 //  add tabs
-//tabGroup.addTab(tab1);  
+tabGroup.addTab(tab1);  
 //tabGroup.addTab(tab2);  
 
 
 
 
 // open tab group
-//tabGroup.open();
+tabGroup.open();
 
 
 /*var view = Titanium.UI.createView({
@@ -181,8 +243,8 @@ rootWin.add(label1);
    height:50
 });
 rootWin.add(view);
-
-
+*/
+/*
 var win = Titanium.UI.createWindow({
         height:30,
         width:250,

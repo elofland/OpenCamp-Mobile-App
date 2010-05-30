@@ -1,5 +1,7 @@
 var win = Titanium.UI.currentWindow;
 
+var animation = Titanium.UI.createAnimation();
+
 var isAndroid = false;
 
 if (Titanium.Platform.name == 'android') {
@@ -54,6 +56,7 @@ var atlanta = Titanium.Map.createAnnotation(atlantaParams);
 // CREATE MAP VIEW
 //
 var mapview = Titanium.Map.createView({
+	top:71,
 	mapType: Titanium.Map.STANDARD_TYPE,
 	region: {latitude:32.9451400, longitude:-96.8400510, latitudeDelta:0.01, longitudeDelta:0.01},
 	animate:true,
@@ -70,7 +73,7 @@ win.add(mapview);
 //
 var regionAtlanta = {latitude:33.74511,longitude:-84.38993,animate:true,latitudeDelta:0.04, longitudeDelta:0.04};
 var regionSV = {latitude:37.337681,longitude:-122.038193,animate:true,latitudeDelta:0.04, longitudeDelta:0.04};
-
+*/
 //
 // NAVBAR BUTTONS
 //
@@ -91,7 +94,23 @@ removeAll.addEventListener('click', function()
 if (!isAndroid) {
 	win.rightNavButton = removeAll;
 }
-*/
+
+var closeBtn = Titanium.UI.createButton({
+	top:0,
+	height:50,
+	title:'Close',
+	zIndex:2,
+	style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+});
+
+closeBtn.addEventListener('click', function()
+        {
+                win.height = 0;
+                animation.width = 0;
+                win.close(animation);
+        });
+
+win.add(closeBtn);
 
 //
 // TOOLBAR BUTTONS

@@ -1,9 +1,16 @@
+/*
+var header = Ti.UI.createView({
+        backgroundColor:'#111',
+        height:20
+});
+*/
+
 // create table view data object
 var data = [];
 
 var xhr = Ti.Network.createHTTPClient();
-//xhr.open("GET","http://v2.0.news.tmg.s3.amazonaws.com/feeds/news.xml");
-xhr.open("GET","http://openca.mp/feed/rss/");
+xhr.open("GET","http://v2.0.news.tmg.s3.amazonaws.com/feeds/news.xml");
+//xhr.open("GET","http://openca.mp/feed/rss/");
 
 //xhr.open("GET","http://v2.0.news.tmg.s3.amazonaws.com/feeds/news.xml");
 
@@ -43,23 +50,27 @@ xhr.onload = function()
 				row.url = item.getElementsByTagName("link").item(0).text;
 			}
 		}
-		var tableview = Titanium.UI.createTableView({data:data});
+		var tableview = Titanium.UI.createTableView({
+		   top:45,
+		   data:data
+		});
 		Titanium.UI.currentWindow.add(tableview);
 		tableview.addEventListener('click',function(e)
 		{
 			var w = Ti.UI.createWindow({title:doctitle});
 			var wb = Ti.UI.createWebView({url:e.row.url});
 			w.add(wb);
-			var b = Titanium.UI.createButton({
-				title:'Close',
-				style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
-		    });
-			w.setLeftNavButton(b);
-			b.addEventListener('click',function()
-			{
-				w.close();
-			}); 
-			w.open({modal:true});
+//			var b = Titanium.UI.createButton({
+//				title:'Close',
+				//style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+//				style:Titanium.UI.iPhone.SystemButtonStyle.BORDERED
+//		    });
+//			w.setLeftNavButton(b);
+//			b.addEventListener('click',function()
+//			{
+//				w.close();
+//			}); 
+		w.open({modal:true});
 		});
 	}
 	catch(E)
