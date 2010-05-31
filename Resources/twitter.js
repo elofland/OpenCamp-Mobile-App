@@ -1,5 +1,7 @@
 var socWin = Titanium.UI.currentWindow;
 
+var animation = Titanium.UI.createAnimation();
+
 var android = Ti.Platform.name == 'android';
 /*
 var button = Titanium.UI.createButton({
@@ -32,6 +34,25 @@ var label = Titanium.UI.createLabel({
 var backBtn = Titanium.UI.createButton({title:'Back'});
 socWin.leftNavButton = backBtn;
 
+var closeBtn = Titanium.UI.createButton({
+	top:0,
+	left:10,
+	height:50,
+	title:'Close',
+	//zIndex:2,
+	style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+});
+
+closeBtn.addEventListener('click', function()
+        {
+                socWin.height = 0;
+                animation.width = 0;
+                socWin.close(animation);
+        });
+
+socWin.add(closeBtn);
+
+
 
 var scrollView = Titanium.UI.createScrollView({
 	top: android ? 45 : 45,
@@ -55,32 +76,36 @@ var socButtonBar = Titanium.UI.createButtonBar({
     //width:200
 });
 
-var twitterURL = 'http://twitter.com/statuses/user_timeline/97368313.json';
+var twitterURL = 'http://twitter.com/statuses/user_timeline/97368313.json?count=10';
 socButtonBar.addEventListener('click', function(e)
    {
 		if (e.index == 0)
 		{
 			Titanium.API.log('OCDFW');
-			twitterURL = 'http://twitter.com/statuses/user_timeline/97368313.json';		
+			twitterURL = 'http://twitter.com/statuses/user_timeline/97368313.json?count=10';		
 		}
 		else if (e.index == 1)
 		{
-			twitterURL = 'http://api.twitter.com/1/ocdfw/lists/10172378/statuses.json';
+			twitterURL = 'http://api.twitter.com/1/ocdfw/lists/10172378/statuses.json?count=10';
 			Titanium.API.log('Committee');
 		}
 		else if (e.index == 2)
 		{
-			twitterURL = 'http://api.twitter.com/1/ocdfw/lists/10433942/statuses.json';
+			twitterURL = 'http://api.twitter.com/1/ocdfw/lists/10433942/statuses.json?count=10';
 			Titanium.API.log('Attendees');
 		}
 		else if (e.index == 3)
 		{
-			twitterURL = 'http://api.twitter.com/1/ocdfw/lists/10433923/statuses.json';
+			twitterURL = 'http://api.twitter.com/1/ocdfw/lists/10433923/statuses.json?count=10';
 			Titanium.API.log('Sponsors');
 		}
     });
 	socWin.add(socButtonBar);
     
+
+/*
+It seems the response from twitter on the request below is taking too long, need to figure out how to limit the return set
+*/
 
 socWin.addEventListener('open', function()
 {
@@ -113,7 +138,7 @@ socWin.addEventListener('open', function()
 	xhr.send();
 });
 
-socButtonBar.addEventListener('click', function()
+socWin.addEventListener('click', function()
 {
     Titanium.API.info('++++++++ click: twitterURL is ' + twitterURL);
 	var xhr = Titanium.Network.createHTTPClient();

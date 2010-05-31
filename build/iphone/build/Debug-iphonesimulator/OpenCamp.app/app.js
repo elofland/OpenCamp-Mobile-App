@@ -9,10 +9,25 @@ var tabGroup = Titanium.UI.createTabGroup();
 // create base UI tab and root window
 //
 var rootWin = Titanium.UI.createWindow({  
+	//height:auto,
     title:'OpenCamp',
     titleImage:'images/OpenCampLogoHeader.png',
     fullscreen:1,
-    backgroundColor:'#fff'
+    //backgroundColor:'#fff'
+    backgroundColor:'#6e84a2'
+   // backgroundGradient:{
+     //   type:'linear',
+        //colors:[{color:'#d4d4d4',position:0.0},{color:'#c4c4c4',position:0.50},{color:'#b4b4b4',position:1.0}]
+        //}
+    /*    
+	backgroundGradient:{
+        type:'linear',
+        colors:['#111','#444'],
+        startPoint:{x:0,y:0},
+        endPoint:{x:0,y:300},
+        backFillStart:true
+ 	}
+ 	*/
 });
 
 //add buttons
@@ -21,52 +36,186 @@ var eventBtn = Titanium.UI.createButton({
 	//backgroundSelectedImage:"images/arcade-button-over.png",
 	top:10,
 	left:10,
-	title:"Events",
 	width:145,
-	height:110
+	height:110,
+	//title:"Events",
+	borderRadius:10,
+	backgroundImage:'images/events_button_off.png'
 });
+
+var eventLabel = Titanium.UI.createLabel({
+    text:'Events',
+    height:20,
+    width:90,
+    //shadowColor:'#aaa',
+    //shadowOffset:{x:5,y:5},
+    //color:'#900',
+    font:{fontSize:18, fontStyle:'bold'},
+    bottom:5,
+    right:5,
+    backgroundColor:'#6b6b6b',
+    opacity:0.75,
+    textAlign:'center',
+    borderRadius:10
+});
+	
+eventBtn.add(eventLabel);
+
+	
+
 
 var mapBtn = Titanium.UI.createButton({
 	//backgroundImage:"images/arcade-button.png",
 	//backgroundSelectedImage:"images/arcade-button-over.png",
 	top:10,
 	left:165,
-	title:"Maps",
 	width:145,
-	height:110
+	height:110,
+	borderRadius:10,
+	backgroundImage:'images/maps_button_off.png'
 });
+
+var mapLabel = Titanium.UI.createLabel({
+    text:'Maps',
+    height:20,
+    width:65,
+    //shadowColor:'#aaa',
+    //shadowOffset:{x:5,y:5},
+    //color:'#900',
+    font:{fontSize:18, fontStyle:'bold'},
+    bottom:5,
+    left:5,
+    backgroundColor:'#6b6b6b',
+    opacity:0.75,
+    textAlign:'center',
+    borderRadius:10
+});
+	
+mapBtn.add(mapLabel);
+
 
 var socialBtn = Titanium.UI.createButton({
 	top:130,
 	left:10,
-	title:"Social",
 	width:145,
-	height:110
+	height:110,
+	borderRadius:10,
+	backgroundImage:'images/social_button_off.png'
 });
+
+var socialLabel = Titanium.UI.createLabel({
+    text:'Social',
+    height:20,
+    width:70,
+    //shadowColor:'#aaa',
+    //shadowOffset:{x:5,y:5},
+    //color:'#900',
+    font:{fontSize:18, fontStyle:'bold'},
+    bottom:5,
+    right:5,
+    backgroundColor:'#6b6b6b',
+    opacity:0.75,
+    textAlign:'center',
+    borderRadius:10
+});
+	
+socialBtn.add(socialLabel);
+
 
 var speakersBtn = Titanium.UI.createButton({
 	top:130,
 	left:165,
-	title:"Speakers",
 	width:145,
-	height:110
+	height:110,
+	borderRadius:10,
+	backgroundImage:'images/speakers_button_off.png'
 });
+
+var speakersLabel = Titanium.UI.createLabel({
+    text:'Speakers',
+    height:20,
+    width:110,
+    //shadowColor:'#aaa',
+    //shadowOffset:{x:5,y:5},
+    //color:'#900',
+    font:{fontSize:18, fontStyle:'bold'},
+    bottom:5,
+    left:5,
+    backgroundColor:'#6b6b6b',
+    opacity:0.75,
+    textAlign:'center',
+    borderRadius:10
+});
+	
+speakersBtn.add(speakersLabel);
+
 
 var miscBtn = Titanium.UI.createButton({
 	top:250,
-	left:10,
-	title:"Misc",
+	left:5,
 	width:145,
-	height:110
+	height:110,
+	borderRadius:10,
+	backgroundImage:'images/misc_button_off.png'
 });
+
+
+var miscLabel = Titanium.UI.createLabel({
+    text:'Misc',
+    height:20,
+    width:65,
+    //shadowColor:'#aaa',
+    //shadowOffset:{x:5,y:5},
+    //color:'#900',
+    font:{fontSize:18, fontStyle:'bold'},
+    bottom:5,
+    right:5,
+    backgroundColor:'#6b6b6b',
+    opacity:0.75,
+    textAlign:'center',
+    borderRadius:10
+});
+	
+miscBtn.add(miscLabel);
+	
 
 var aboutBtn = Titanium.UI.createButton({
 	top:250,
 	left:165,
-	title:"About",
 	width:145,
-	height:110
+	height:110,
+	borderRadius:10,
+	backgroundImage:'images/about_button_off.png'
 });
+
+var aboutLabel = Titanium.UI.createLabel({
+    text:'About',
+    height:20,
+    width:70,
+    //shadowColor:'#aaa',
+    //shadowOffset:{x:5,y:5},
+    //color:'#900',
+    font:{fontSize:18, fontStyle:'bold'},
+    bottom:5,
+    left:5,
+    backgroundColor:'#6b6b6b',
+    opacity:0.75,
+    textAlign:'center',
+    borderRadius:10
+});
+	
+aboutBtn.add(aboutLabel);
+
+var footer = Titanium.UI.createView({
+	bottom:10,
+	height:35,
+	width:300,
+	backgroundColor:'#000000',
+	borderRadius:10
+});
+
+rootWin.add(footer);
+
 
 
 eventBtn.addEventListener("click", function(e){
@@ -149,18 +298,18 @@ socialBtn.addEventListener("click", function(e){
 	});
 	//var backBtn = Titanium.UI.createButton({title:'Back'});
 	//socWin.leftNavButton = backBtn;
-	//socWin.open();  
-	var socButtonBar = Titanium.UI.createButtonBar({
-	    labels:['OCDFW', 'Committee', 'Attendees', 'Sponsors'],
-	    //backgroundColor:'#336699',
-	    backgroundColor:'#13386c',
-	    bottom:0,
-	    style:Titanium.UI.iPhone.SystemButtonStyle.BAR.BORDERED,
-		//width:auto,
-	    height:25
-	    //font:{fontSize:10}
-	    //width:200
-	});
+	socWin.open();  
+//	var socButtonBar = Titanium.UI.createButtonBar({
+//	    labels:['OCDFW', 'Committee', 'Attendees', 'Sponsors'],
+//	    backgroundColor:'#336699',
+//	    backgroundColor:'#13386c',
+//	    bottom:0,
+//	    style:Titanium.UI.iPhone.SystemButtonStyle.BAR.BORDERED,
+//		width:auto,
+//	    height:25
+//	    font:{fontSize:10}
+//	    width:200
+//	});
 //	socButtonBar.addEventListener('click', function(e)
 //   {
 //
@@ -182,7 +331,7 @@ socialBtn.addEventListener("click", function(e){
 //			alert("Sponsors");
 //		}
 //    });
-socWin.add(socButtonBar);
+//socWin.add(socButtonBar);
 socWin.open();
 });
 
