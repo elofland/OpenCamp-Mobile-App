@@ -298,7 +298,7 @@ socialBtn.addEventListener("click", function(e){
 	});
 	//var backBtn = Titanium.UI.createButton({title:'Back'});
 	//socWin.leftNavButton = backBtn;
-	socWin.open();  
+	//socWin.open();  
 //	var socButtonBar = Titanium.UI.createButtonBar({
 //	    labels:['OCDFW', 'Committee', 'Attendees', 'Sponsors'],
 //	    backgroundColor:'#336699',
@@ -344,7 +344,14 @@ miscBtn.addEventListener("click", function(e){
 });
 
 aboutBtn.addEventListener("click", function(e){
-	alert("About OpenCamp app");
+var abtWin = Titanium.UI.createWindow({
+	url:"about.js",
+	title:"About OpenCamp",
+	backgroundColor:'#3366990'
+	
+});
+abtWin.open();
+
 });
 
 
