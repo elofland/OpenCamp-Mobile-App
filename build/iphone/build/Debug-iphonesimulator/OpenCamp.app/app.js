@@ -221,6 +221,7 @@ rootWin.add(footer);
 eventBtn.addEventListener("click", function(e){
 	var eventWin = Titanium.UI.createWindow({
 		url:"events.js",
+		//rightNavButton:'back',
 		backgroundColor:'#3366990',		
 		title:"OpenCamp Events"
 	});

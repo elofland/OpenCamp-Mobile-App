@@ -1,153 +1,241 @@
-/*
-var header = Ti.UI.createView({
-        backgroundColor:'#111',
-        height:20
-});
-*/
-
-// create table view data object
-
 var evtWin = Titanium.UI.currentWindow;
 
 var animation = Titanium.UI.createAnimation();
 
-var evtButtonBar = Titanium.UI.createButtonBar({
-    labels:['All', 'WordPress', 'Drupal', 'Joomla','Other'],
-    //backgroundColor:'#336699',
-    backgroundColor:'#13386c',
-    bottom:0,
-    style:Titanium.UI.iPhone.SystemButtonStyle.BAR.BORDERED,
-	//width:auto,
-    height:25
-    //font:{fontSize:10}
-    //width:200
-});
-
-evtWin.add(evtButtonBar);
-
-// create table view
+// create table view data object
 var tableview = Titanium.UI.createTableView({
         top:50,
-        bottom:25
+        bottom:37,
+        style: Titanium.UI.iPhone.TableViewStyle.GROUPED
 });
 
-
-//connect to database
-var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
-
-//run query
-var rows = db.execute('select date, event_name, event_desc, track, speaker_name from opencamp_data');
+//var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
 
 
-Titanium.API.info('retrived from database: ' + rows.getRowCount());
+function setData(track) {
 
-// define image mappings
-var images= new Array();
-images["WordPress"]="images/wp.png";
-images["Joomla"]="images/j.png";
-images["Drupal"]="images/d.png";
-images["other"]="images/oc.png";
-images["all"]="images/oc.png";
-
-var data = [];
-Titanium.API.info('getting ready to seed data for table rows');
-
-/*
-while (rows.isValidRow())
-{
-	data.push({title:rows.field(1),hasChild:true,test:'maps.js'});
-}
-*/
-
-while (rows.isValidRow()) {
-  //if ((car_type=="cool") || (car_type=="family") || (car_type=="big"))
-  //  alert("I think you should get a(n) "+my_cars[car_type]+".");
-   
-	var row = Ti.UI.createTableViewRow({height:40});
-    Titanium.API.info('track is ' + rows.fieldByName('track'));
-    Titanium.API.info(' and image URL is ' + images[rows.fieldByName('track')]);
-	var trackBadge=Titanium.UI.createImageView({
-	    url:images[rows.fieldByName('track')],
-	    width:32,
-	    height:32,
-	    left:4,
-	    top:4
+	var buttonObjects = [
+		{title:'All',width:33,enabled:true},
+		{title:'WordPress', width:78},
+		{title:'Drupal',width:51},
+		{title:'Joomla',width:51},
+		{title:'dotNet',width:51},
+		{title:'Other',width:51}
+	];
+	
+	var evtTabBar = Titanium.UI.createTabbedBar({
+	    labels:buttonObjects,
+	    backgroundColor:'#336699',
+	    font:{fontSize:4},
+	    bottom:0,
+	    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+	    height:37,
+	    width:'320'
 	});
-  
-	var eventName=Titanium.UI.createLabel({
-		text:rows.fieldByName('event_name'),
-		font:{fontSize:16,fontWeight:'bold'},
-		width:'auto',
-		textAlign:'left',
-		top:2,
-		left:40,
-		height:16
+	
+	evtWin.add(evtTabBar);
+	
+	evtTabBar.addEventListener('click', function(e)
+	{
+		tableview.setData([]);
+		setTimeout(function()
+		{
+			setData(buttonObjects[e.index].title);
+		},1000)
+	
 	});
+	
+	//connect to database
+//	var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
+	var db = Titanium.Database.open('opencamp_data');
+		
+	//run query to get dates
+	var dateRows = db.execute('select distinct date from opencamp_data');
+	Titanium.API.info('dateRows: retrived from database: ' + dateRows.getRowCount());
+		
+	// define image mappings
+			
+	var images= new Array();
+	images["WordPress"]="images/wp.png";
+	images["Joomla"]="images/j.png";
+	images["Drupal"]="images/d.png";
+	images["Other"]="images/oc.png";
+	images["all"]="images/oc.png";
+	
+		
+	var data = [];
+			
+		
+	while (dateRows.isValidRow()) {
+	    //Ti.UI.createTableViewSection({headerTitle:dateRows.fieldByName('date')});
+	    //Titanium.API.info('dateCounter before = ' + dateCounter);
+	    //dateCounter++;
+	    //Titanium.API.info('dateCounter after = ' + dateCounter);
+	    Titanium.API.info('outer while dateRows: date: ' + dateRows.fieldByName('date'));
+	    
+	    if (track && track != 'All') { 
+	    	Ti.API.info('track = "' + track + '"');
+	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '" and track = "' + track + '"';
+	    } else {
+	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '"';
+	    }
+	    //var rows = db.execute('select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '"');
+	    Ti.API.info('dbQuery is "' + dbQuery + '"');
+	    var rows = db.execute(dbQuery);
+	    var seen=0;
+	    
+		
+	    
+		while (rows.isValidRow()) {
+			if (seen == 0) {			
+				Titanium.API.info('date header: ' + dateRows.fieldByName('date'));
+				section=Ti.UI.createTableViewSection({
+					headerTitle:dateRows.fieldByName('date'),
+					left:0,
+					height:'auto',
+					width:200
+				});
+				data.push(section);
+				seen=1;
+			}
+		   
+			var row = Ti.UI.createTableViewRow({
+				height:50
+			});
+			//data[dateCounter].add(row);
+			
+		    //Titanium.API.info('track is ' + rows.fieldByName('track'));
+		    //Titanium.API.info(' and image URL is ' + images[rows.fieldByName('track')]);
+			var trackBadge=Titanium.UI.createImageView({
+			    url:images[rows.fieldByName('track')],
+			    width:32,
+			    height:32,
+			    left:4,
+			    top:4
+			});
+		  
+			var eventName=Titanium.UI.createLabel({
+				text:rows.fieldByName('event_name'),
+				font:{fontSize:16,fontWeight:'bold'},
+				width:'auto',
+				textAlign:'left',
+				top:2,
+				left:40,
+				height:19
+			});
+		  
+			var speakerLabel =  Titanium.UI.createLabel({
+				text:rows.fieldByName('speaker_name'),
+				font:{fontSize:12,fontWeight:'bold'},
+				width:'auto',
+				textAlign:'left',
+				bottom:0,
+				left:60,
+				height:12
+			});
+		
+			var startTimeLabel = Titanium.UI.createLabel({
+				text:rows.fieldByName('starttime'),
+				font:{fontSize:12,fontWeight:'bold'},
+				width:'auto',
+				textAlign:'right',
+				bottom:0,
+				right:50,
+				height:12
+			});
+			
+			var durationLabel = Titanium.UI.createLabel({
+				text:rows.fieldByName('duration'),
+				font:{fontSize:12,fontWeight:'bold'},
+				width:'auto',
+				textAlign:'right',
+				bottom:0,
+				right:10,
+				height:12
+			});
+			
+			
+			//var eventDesc=rows.fieldByName('event_desc');
+		  
+			row.add(trackBadge);
+			row.add(eventName);
+			row.add(speakerLabel);
+			row.add(startTimeLabel);
+			row.add(durationLabel);
+			//row.add(eventDesc);
+			//row.hasChild=true;
+			row.className = 'schedule row';
+			row.eName = rows.fieldByName('event_name');
+			//row.eDesc = rows.fieldByName('event_desc');
+			//row.sName = rows.fieldByName('speaker_name');
+			row.oc_key = rows.fieldByName('oc_key');
+			data.push(row);
+			//data[dateCounter].push(row);
+			rows.next();
+		  
+		  
+		}; //end main sql
+		dateRows.next();
+		rows.close();
+	}; //end date sql
+		
+	// close database
+	//rows.close();
+	db.close();  
+	
+	// create table view		
+	tableview.setData(data);
+} //end setData function
   
-	var speakerLabel =  Titanium.UI.createLabel({
-		text:rows.fieldByName('speaker_name'),
-		font:{fontSize:12,fontWeight:'bold'},
-		width:'auto',
-		textAlign:'left',
-		bottom:0,
-		left:60,
-		height:12
-	});
-  
-  row.add(trackBadge);
-  row.add(eventName);
-  row.add(speakerLabel);
-  row.hasChild=true;
-  row.className = 'schedule row';
-  
-  data.push(row);
-  rows.next();
-  
-  
-};
-  /*
-  data.push({
-    title: rows.fieldByName('event_name'),
-    fontSize:16,
-    fontFamily:'Marker Felt',
-    id: rows.field(0)
-  });
-        rows.next();
-}
-//rows.close();
-*/
-// create table view
 
-tableview.setData(data);
-
-/*
-var tableview = Titanium.UI.createTableView({
-        data:data,
-        top:50,
-        bottom:25
-});
-*/
-
-
+	
 // create table view event listener
 tableview.addEventListener('click', function(e)
-{
-        if (e.rowData.test)
+{	
+    //alert(e.rowData.eName + " Don't touch me there!<br> " + e.rowData.eDesc);
+    //alert('row ID = ' + e.rowData.oc_key);    
+    var evtDescWin = Titanium.UI.createWindow({
+            url:'event_desc.js',
+            backgroundColor:'#3366990',
+            title:e.rowData.eName
+    });
+    evtDescWin.oc_key = e.rowData.oc_key;
+    
+    var closeBtn = Titanium.UI.createButton({
+    	top:0,
+    	left:10,
+    	height:30,
+    	width:50,
+        title:'Back'
+        //style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+    });
+    closeBtn.addEventListener('click', function(e)
         {
-                var win = Titanium.UI.createWindow({
-                        url:e.rowData.test,
-                        title:e.rowData.title
-                });
-                Titanium.UI.currentTab.open(win,{animated:true});
-        }
+           Ti.API.info('about to close evtDescWin');
+           evtDescWin.close();
+        });
+    
+    evtDescWin.add(closeBtn);
+    
+    
+    //Titanium.UI.currentTab.open(evtDescWin,{animated:true});
+    evtDescWin.open();
+//        alert("Don't touch me there!");
+        
 });
+	
 
-// close database
-rows.close();
-db.close();  
+
 // add table view to the window
 Titanium.UI.currentWindow.add(tableview);
+setTimeout(function()
+{
+	tableview.setData([]);
+	setData();
+},500)
 
+
+//setData();
 
 /*
 
