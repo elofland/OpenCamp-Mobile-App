@@ -9,9 +9,6 @@ var tableview = Titanium.UI.createTableView({
         style: Titanium.UI.iPhone.TableViewStyle.GROUPED
 });
 
-//var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
-
-
 function setData(track) {
 
 	var buttonObjects = [
@@ -41,7 +38,7 @@ function setData(track) {
 		setTimeout(function()
 		{
 			setData(buttonObjects[e.index].title);
-		},1000)
+		},1000);
 	
 	});
 	
@@ -195,19 +192,38 @@ tableview.addEventListener('click', function(e)
     //alert(e.rowData.eName + " Don't touch me there!<br> " + e.rowData.eDesc);
     //alert('row ID = ' + e.rowData.oc_key);    
     var evtDescWin = Titanium.UI.createWindow({
-            url:'event_desc.js',
-            backgroundColor:'#3366990',
-            title:e.rowData.eName
+    	backgroundColor:'#3366990',
+    	title:e.rowData.eName    	
+	});
+	
+	//var evtDescWVURL = 'event_desc.htm?oc_key=' + e.rowData.oc_key;
+	Titanium.App.Properties.setInt("oc_key",e.rowData.oc_key);
+	//Ti.API.info('evtDescWVURL = ' + evtDescWVURL);
+    var evtDescWebView = Titanium.UI.createWebView({
+            url:'event_desc.html',
+            //url:evtDescWVURL,
+            top:50
+            //scalesPageToFit = false
     });
+    
     evtDescWin.oc_key = e.rowData.oc_key;
+    
+    /*
+    evtDescWebView.addEventListener('load', function() {
+        Ti.App.fireEvent('pageReady',{oc_key:e.rowData.oc_key});
+    });
+    */
+	
+    //evtDescWin.oc_key = e.rowData.oc_key;
+    evtDescWin.add(evtDescWebView);
     
     var closeBtn = Titanium.UI.createButton({
     	top:0,
     	left:10,
     	height:30,
     	width:50,
-        title:'Back'
-        //style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+        title:'Back',
+        style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
     });
     closeBtn.addEventListener('click', function(e)
         {
@@ -232,7 +248,7 @@ setTimeout(function()
 {
 	tableview.setData([]);
 	setData();
-},500)
+},500);
 
 
 //setData();
