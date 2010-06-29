@@ -337,7 +337,29 @@ socWin.open();
 });
 
 speakersBtn.addEventListener("click", function(e){
-	alert("OpenCamp Speakers");
+	var spkrWin = Titanium.UI.createWindow({
+		url:"speakers.js",
+		//rightNavButton:'back',
+		backgroundColor:'#3366990',		
+		title:"OpenCamp Speakers"
+	});
+		var closeBtn = Titanium.UI.createButton({
+			top:0,
+			left:270,
+			height:30,
+			width:50,
+		    title:'Close',
+		    style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+		});
+		closeBtn.addEventListener('click', function()
+		    {
+		       spkrWin.close();
+		    });
+		
+		spkrWin.add(closeBtn);
+		
+		spkrWin.open();
+	
 });
 
 miscBtn.addEventListener("click", function(e){

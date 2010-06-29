@@ -27,7 +27,7 @@ function setData(track) {
 	    bottom:0,
 	    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
 	    height:37,
-	    width:'320'
+	    width:320
 	});
 	
 	evtWin.add(evtTabBar);
@@ -38,16 +38,16 @@ function setData(track) {
 		setTimeout(function()
 		{
 			setData(buttonObjects[e.index].title);
-		},1000);
+		},500);
 	
 	});
 	
 	//connect to database
-//	var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
-	var db = Titanium.Database.open('opencamp_data');
+	var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
+	//var db = Titanium.Database.open('opencamp_data');
 		
 	//run query to get dates
-	var dateRows = db.execute('select distinct date from opencamp_data');
+	var dateRows = db.execute('select distinct date from opencamp_data order by date');
 	Titanium.API.info('dateRows: retrived from database: ' + dateRows.getRowCount());
 		
 	// define image mappings
@@ -72,9 +72,9 @@ function setData(track) {
 	    
 	    if (track && track != 'All') { 
 	    	Ti.API.info('track = "' + track + '"');
-	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '" and track = "' + track + '"';
+	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '" and track = "' + track + '" order by starttime,track';
 	    } else {
-	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '"';
+	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '" order by starttime,track';
 	    }
 	    //var rows = db.execute('select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_name from opencamp_data where date="' + dateRows.fieldByName('date') + '"');
 	    Ti.API.info('dbQuery is "' + dbQuery + '"');
@@ -192,21 +192,23 @@ tableview.addEventListener('click', function(e)
     //alert(e.rowData.eName + " Don't touch me there!<br> " + e.rowData.eDesc);
     //alert('row ID = ' + e.rowData.oc_key);    
     var evtDescWin = Titanium.UI.createWindow({
+    	url:"event_desc.js",
     	backgroundColor:'#3366990',
-    	title:e.rowData.eName    	
+    	title:e.rowData.eName
 	});
 	
 	//var evtDescWVURL = 'event_desc.htm?oc_key=' + e.rowData.oc_key;
-	Titanium.App.Properties.setInt("oc_key",e.rowData.oc_key);
+	//Titanium.App.Properties.setInt("oc_key",e.rowData.oc_key);
 	//Ti.API.info('evtDescWVURL = ' + evtDescWVURL);
+    /* trying to load as webview, can't seem to pass variable to it
     var evtDescWebView = Titanium.UI.createWebView({
             url:'event_desc.html',
             //url:evtDescWVURL,
             top:50
             //scalesPageToFit = false
     });
-    
-    evtDescWin.oc_key = e.rowData.oc_key;
+    */
+   	evtDescWin.oc_key = e.rowData.oc_key;
     
     /*
     evtDescWebView.addEventListener('load', function() {
@@ -215,7 +217,7 @@ tableview.addEventListener('click', function(e)
     */
 	
     //evtDescWin.oc_key = e.rowData.oc_key;
-    evtDescWin.add(evtDescWebView);
+    //evtDescWin.add(evtDescWebView);
     
     var closeBtn = Titanium.UI.createButton({
     	top:0,
