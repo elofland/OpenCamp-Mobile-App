@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-<id>com.hypeanvil.opencamp</id>
+<id>mp.openca.opencamp</id>
 <name>OpenCamp</name>
 <version>1.0</version>
 <publisher>elofland</publisher>
@@ -9,7 +9,7 @@
 <copyright>2010 by Hype Anvil</copyright>
 <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
-    <prerendered-icon>false</prerendered-icon>
+    <prerendered-icon>true</prerendered-icon>
     <statusbar-style>default</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
     <analytics>true</analytics>
