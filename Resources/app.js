@@ -1,150 +1,172 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#FFFFFF');
-
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
-
-//
-// create base UI tab and root window
-//
-var rootWin = Titanium.UI.createWindow({  
-	//height:auto,
+var animation = Titanium.UI.createAnimation();
+Ti.API.info('==== entry point');
+var splashWin = Titanium.UI.createWindow({  
     title:'OpenCamp',
-    backgroundImage:'images/OpenCamp_navProto01-jn.png',
+	backgroundImage:'images/OpenCamp_splash2.png',
     fullscreen:1,
     backgroundColor:'#FFFFFF'
 });
+//  CREATE CUSTOM LOADING INDICATOR
+//
+var indWin = null;
+var actInd = null;
+function showIndicator()
+{
+        // window container
+        indWin = Titanium.UI.createWindow({
+        		top:92,
+        		left:89,
+                height:150,
+                width:150,
+                zIndex:10
+        });
 
-rootWin.hideNavBar();
+        // black view
+        var indView = Titanium.UI.createView({
+                height:150,
+                width:150,
+                backgroundColor:'#000',
+				borderRadius:75,
+                opacity:0.8
+        });
+        indWin.add(indView);
 
-//define transparent buttons
-var eventBtn = Titanium.UI.createView({
-	top:28,
-	left:-15,
-	width:170,
-	height:170,
-	borderRadius:80
+        // loading indicator
+        actInd = Titanium.UI.createActivityIndicator({
+                style:Titanium.UI.iPhone.ActivityIndicatorStyle.BIG,
+                height:50,
+                width:50,
+                top:20
+        });
+        indWin.add(actInd);
+
+        // message
+        var message = Titanium.UI.createLabel({
+                text:'Retrieving Latest Data',
+                color:'#fff',
+                width:'auto',
+                height:'auto',
+                textAlign:'center',
+                font:{fontSize:20,fontWeight:'bold'},
+                bottom:30
+        });
+        indWin.add(message);
+        indWin.open();
+        actInd.show();
+        Titanium.UI.currentWindow.add(indWin);
+
+};
+
+function hideIndicator()
+{
+        actInd.hide();
+        indWin.close({opacity:0,duration:1000});
+};
+
+//
+// Add global event handlers to hide/show custom indicator
+//
+Titanium.App.addEventListener('show_indicator', function(e)
+{
+        Ti.API.info("IN SHOW INDICATOR");
+        showIndicator();
+});
+Titanium.App.addEventListener('hide_indicator', function(e)
+{
+        Ti.API.info("IN HIDE INDICATOR");
+        hideIndicator();
 });
 
-var socialBtn = Titanium.UI.createView({
-	top:25,
-	right:15,
-	width:145,
-	height:145,
-	borderRadius:80
-});
+//
+//  create event to fire after loading
+//
 
-var speakersBtn = Titanium.UI.createView({
-	top:173,
-	left:135,
-	width:170,
-	height:170,
-	borderRadius:80
-});
+//splashWin.addEventListener('open', function()
+//{
+	// fire off data loading
+//	Ti.include("data.js");
+//});
 
-var aboutBtn = Titanium.UI.createView({
-	bottom:57,
-//	left:10,
-	width:300,
-	height:64
-});
+//splashWin.addEventListener('close', function()
+//{
+//	alert('data updated and the parent windows has closed');
+//});
 
-
-// define behaviors of the above buttons
-eventBtn.addEventListener("click", function(e){
-	var eventWin = Titanium.UI.createWindow({
-		url:"events.js",
-		backgroundColor:'#FFFFFF',
-		title:"OpenCamp Events"
-	});
-		var closeBtn = Titanium.UI.createButton({
-			top:5,
-			left:10,
-			height:40,
-			width:50,
-		    title:'Back',
-		    style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
-		    backgroundColor:'#336699',
-		    borderRadius:10
-		});
-		closeBtn.addEventListener('click', function()
-		    {
-		       eventWin.close();
-		    });
-
-		eventWin.add(closeBtn);
-		eventWin.open();
-		//Titanium.UI.currentTab.open(eventWin,{animated:true});
-	});
-
-socialBtn.addEventListener("click", function(e){
-	var socWin = Titanium.UI.createWindow({
-		url:"twitter.js",
-		//backgroundColor:'#3366990',
-		backgroundColor:'#FFFFFF',
-		title:"OpenCamp Social Media"
-	});
-	socWin.open();
-});
-
-speakersBtn.addEventListener("click", function(e){
-	var spkrWin = Titanium.UI.createWindow({
-		url:"speakers.js",
-		//rightNavButton:'back',
-		//backgroundColor:'#3366990',
-		backgroundColor:'#FFFFFF',
-		title:"OpenCamp Speakers"
-	});
-		var closeBtn = Titanium.UI.createButton({
-			top:5,
-			left:10,
-			height:40,
-			width:50,
-		    title:'Back',
-		    style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
-		    backgroundColor:'#3366990',
-		    borderRadius:10
-		});
-		closeBtn.addEventListener('click', function()
-		    {
-		       spkrWin.close();
-		    });
-		
-		spkrWin.add(closeBtn);
-		
-		spkrWin.open();
+if(Titanium.Network.online)
+{
+	Ti.API.info('+++  We have network!');
+	//Ti.include('checkForUpdate.js');
+		var db_update = Titanium.Database.install('opencamp_app.db','app');
 	
-});
-
-aboutBtn.addEventListener("click", function(e){
-//alert("abtBtn was clicked");
-var abtWin = Titanium.UI.createWindow({
-	url:"about.js",
-	title:"About OpenCamp",
-	//backgroundColor:'#3366990'
-	backgroundColor:'#FFFFFF'
+		dbQuery='select data_last_update from app';
+		rows = db_update.execute(dbQuery);
+		
+		while (rows.isValidRow()) {
+			var lastUpdate = rows.fieldByName('data_last_update');
+			rows.next();
+		}
+		db_update.close;
+		Ti.API.info('data last update: ' + lastUpdate);
+		
+		//var xhr = [];
+		var xhr = Ti.Network.createHTTPClient();
+		xhr.open("GET","http://openca.mp/xml/calendar-last-modified/?key=nQcarG4jg9Nh");
+		xhr.onload = function()
+		{
+			try
+			{
+			Ti.API.info('attempting to get latest update time from server');
+			var doc = this.responseXML.documentElement;
+			
+			var update = doc.getElementsByTagName("last_updated");
 	
-});
-abtWin.open();
+			var currentLastUpdate = update.item(0).text;
+			Ti.API.info('currentLastUpdated is "' + currentLastUpdate + '"');
+			
+			if ( lastUpdate >= currentLastUpdate ) 
+			{
+				Ti.API.info('You have the latest data!  See: ' + lastUpdate + ' >= ' + currentLastUpdate);
+				Ti.include('main.js');
+			} else {
+				Ti.API.info('Uh oh!  You need to update your data! See: ' + lastUpdate + ' < ' + currentLastUpdate);
+				splashWin.currentLastUpdate = currentLastUpdate;
+				splashWin.open({
+//					opacity:0
+					transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+					
+				});
+//				splashWin.animate({opacity:1,duration:1800});				
+				Ti.include('data.js');
+			}
+	
+			}
+			catch(E)
+			{
+				alert('Unable to retrieve data from openca.mp site, please try again later');
+			}
+			
+		};
+			//httpClient.send();
+			
+		xhr.onerror = function(e)
+		{
+			alert('Unable to retrieve data, please try again later cp2');
+		};
+		xhr.send();	
+	
+} 
+	else if (Titanium.Network.online && Titanium.Network.networkTypeName !== 'wifi' && Titanium.Network.networkTypeName !== 'lan')
+{
+	alert("The data currently on this device looks like it’s out of date and we require wifi access to update. Please relaunch the app when you have a WiFi connection to automatically download the most current content.");
+	Ti.include("main.js");
+} else {
+	alert("The data currently on this device looks like it’s out of date. Some parts of this application, such as the Twitter feeds and the OpenCa.mp blog, require network connectivity to refresh.\n\nPlease relaunch the app when you have a WiFi connection to automatically download the most current content.")
+	Ti.include("main.js");
+}
 
-});
-
-//add buttons to root window
-rootWin.add(eventBtn);
-rootWin.add(socialBtn);
-rootWin.add(speakersBtn);
-rootWin.add(aboutBtn);
-
-var tab1 = Titanium.UI.createTab({  
-    //icon:'KS_nav_views.png',
-    title:'OpenCamp',
-    window:rootWin
-});
-
-rootWin.hideTabBar();
-
-//  add tabs
-tabGroup.addTab(tab1);  
-
-// open tab group
-tabGroup.open();
+//splashWin.open({
+//	opacity:0
+//});
+//splashWin.animate({opacity:1,duration:1800});

@@ -1,38 +1,123 @@
 var evtWin = Titanium.UI.currentWindow;
+evtWin.title = 'Schedule';
+evtWin.barColor = '#0069B4';
+evtWin.backButtonTitle = 'Schedule';
+
 
 var animation = Titanium.UI.createAnimation();
 
 // create table view data object
 var tableview = Titanium.UI.createTableView({
-        top:50,
-        bottom:37,
+        top:40,
+        bottom:0,
         style: Titanium.UI.iPhone.TableViewStyle.GROUPED,
         backgroundColor:'#FFFFFF'
 });
 
 function setData(track) {
+	function getArrayLength(array)
+	{
+		var totalLength = 0;
+		for (i=0,ii=array.length; i < ii; i++) 
+		{
+			totalLength += array[i].length;
+		}
+		return ( totalLength * 10 );
+	};
+	
+	function getWordLength(word)
+	{
+		var wordLength=0;
+		var wordWidth=0;
+		wordLength=trackArray[i].length;
+		wordWidth = ( wordLength * 10);
+		return wordWidth;
+	} // end function wordLength
+	
+	trackArray=[ 'All', 'WordPress', 'Drupal', 'Joomla', '.NET','New Media','Common' ];
+	
+	var trackArrayWidth = getArrayLength(trackArray);
+	var leftArrowOn = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/leftArrowOn.png');
+	var leftArrowOff = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/leftArrowOff.png');
+	var rightArrowOn = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/rightArrowOn.png');
+	var rightArrowOff = Ti.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,'images/rightArrowOff.png');
+	
+	var scrollContainer = Titanium.UI.createView({
+		top:-2,
+		height:'auto',
+		width:320,
+		borderWidth:1,
+		borderColor:'#374E7E',
+		backgroundColor:'#000000'
+	});
 
-	var buttonObjects = [
-		{title:'All',width:33,enabled:true},
-		{title:'WordPress', width:78},
-		{title:'Drupal',width:51},
-		{title:'Joomla',width:51},
-		{title:'.NET',width:51},
-		{title:'Other',width:51}
-	];
+	var leftLabel = Titanium.UI.createImageView({
+		image:leftArrowOn,
+		width:10,
+		height:20,
+		left:0,
+		visible:false
+	});
+	scrollContainer.add(leftLabel);
+
+	var rightLabel = Titanium.UI.createImageView({
+			image:rightArrowOn,
+			width:10,
+			height:20,
+			right:0
+		});
+	
+	scrollContainer.add(rightLabel);
+	
+	var scrollView = Titanium.UI.createScrollView({
+	        contentWidth:'auto',
+	        contentHeight:50,
+	        top:0,
+	        left:10,
+	        height:50,
+	        width:300,
+	        borderRadius:0,
+	        backgroundColor:'#000000',
+	        scrollType:"horizontal"
+	});
+	
+	scrollView.addEventListener('scroll', function(e)
+	{
+        if (e.x > 30)
+		{
+			leftLabel.show();
+		} else {
+			leftLabel.hide();
+		}
+		
+		if (e.x < 130)
+		{
+			rightLabel.show();
+		} else {
+			rightLabel.hide();
+		}
+	});
+	
+	var buttonObjects = [];
+	for (i=0,ii=trackArray.length; i < ii; i++)
+	{
+		var buttonObj = [];
+		buttonObj = {
+			title:trackArray[i],
+			width:getWordLength(trackArray[i])
+		};
+		buttonObjects.push(buttonObj);
+	};
 	
 	var evtTabBar = Titanium.UI.createTabbedBar({
 	    labels:buttonObjects,
-	    backgroundColor:'#336699',
-	    font:{fontSize:4},
+		backgroundColor:'#374E7E',
 	    bottom:-2,
 	    style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
-	    height:37,
-	    width:320
+	    left:0,
+	    height:50,
+	    width:trackArrayWidth
 	});
-	
-	evtWin.add(evtTabBar);
-	
 	evtTabBar.addEventListener('click', function(e)
 	{
 		tableview.setData([]);
@@ -42,6 +127,11 @@ function setData(track) {
 		},500);
 	
 	});
+	
+	scrollView.add(evtTabBar);
+	scrollContainer.add(scrollView);
+	scrollContainer.add(scrollView);
+	evtWin.add(scrollContainer);
 	
 	// define difficultyArray mapping difficulty number returned from database to a word and color combination
 	var difficultyArray=[
@@ -55,34 +145,37 @@ function setData(track) {
 		
 	//run query to get dates
 	var dateRows = db.execute('select distinct date from opencamp_data order by date');
-		
-	// define image mappings
-	var images= new Array();
-	images["WordPress"]="images/wp.png";
-	images["Joomla"]="images/j.png";
-	images["Drupal"]="images/d.png";
-	images["Other"]="images/oc.png";
-	images["all"]="images/oc.png";
-	
-		
-	var data = [];
 
+	var images= new Array();
+	images["WordPress"]="images/wordpress_icon_3.png";
+	images["Joomla"]="images/joomla_icon_3.png";
+	images["Drupal"]="images/drupal_icon_3.png";
+	images["New Media"]="images/newmedia_icon_3.png";
+	images[".NET"]="images/net_icon_3.png";
+	images["Common"]="images/common_icon_3.png";
+	images["NA"]="images/oc.png";
+
+	var data = [];
+	var count=0;
+	var breakSeen=0;
+	var lunchSeen=0;
+	
 	while (dateRows.isValidRow()) {
 
 	    var rows =[];
-	    
+	    var dbQuery = [];
 	    if (track && track != 'All') { 
-	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_first_name, speaker_last_name, difficulty from opencamp_data where date="' + dateRows.fieldByName('date') + '" and track = "' + track + '" order by starttime desc, track';
+	    	dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_first_name, speaker_last_name, difficulty from opencamp_data where date="' + dateRows.fieldByName('date') + '" and track = "' + track + '" order by starttime, track';
 	    } else {
-	    	var dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_first_name, speaker_last_name, difficulty from opencamp_data where date="' + dateRows.fieldByName('date') + '" order by starttime desc,track';
+	    	dbQuery='select oc_key, date, starttime, duration, event_name, event_desc, track, speaker_first_name, speaker_last_name, difficulty from opencamp_data where date="' + dateRows.fieldByName('date') + '" order by starttime,track';
 	    }
-	    var rows = db.execute(dbQuery);
-	    var seen=0;
-	    
+	    rows = db.execute(dbQuery);
+	    var sectionSeen=0;
+
 		
-	    
+	    //innerloop:
 		while (rows.isValidRow()) {
-			if (seen == 0) {
+			if (sectionSeen == 0) {
 				section=Ti.UI.createTableViewSection({
 					headerTitle:dateRows.fieldByName('date'),
 					left:0,
@@ -90,12 +183,31 @@ function setData(track) {
 					width:200
 				});
 				data.push(section);
-				seen=1;
+				sectionSeen=1;
 			}
 		   
 			var row = Ti.UI.createTableViewRow({
 				height:50
 			});
+			
+			var event_name_text = rows.fieldByName('event_name');
+			
+			// show just one break/lunch
+			if ( event_name_text == "Break" ) {
+				breakSeen++;
+				lunchSeen=0;
+			} else if ( event_name_text == "Lunch" ) {
+				lunchSeen++;
+				breakSeen=0;
+			}
+			
+			if ( breakSeen >= 2 && event_name_text == "Break" ) {
+				rows.next();
+				continue;
+			} else if ( lunchSeen >= 2 && event_name_text == "Lunch" ) {
+			   	rows.next();
+			   	continue;
+			}
 			
 			var trackBadge=Titanium.UI.createImageView({
 			    url:images[rows.fieldByName('track')],
@@ -106,46 +218,69 @@ function setData(track) {
 			});
 		  
 			var eventName=Titanium.UI.createLabel({
-				text:rows.fieldByName('event_name'),
+				text:event_name_text,
 				font:{fontSize:16,fontWeight:'bold'},
 				width:'auto',
 				textAlign:'left',
-				top:2,
-				left:40,
+				bottom:14,
+				left:45,
 				height:19
 			});
 			
-			if (rows.fieldByName('difficulty') != 'na') {
+			if (rows.fieldByName('difficulty') != 'NA') {
 			
 				var difficultyLabel2 = Ti.UI.createLabel({
 					text:difficultyArray[rows.fieldByName('difficulty')][0],
 					font:{fontSize:12,fontWeight:'bold'},
 					width:'auto',
 					textAlign:'left',
-					bottom:14,
-					right:10,
+					top:2,
+					right:4,
 					height:12,
 					backgroundColor:difficultyArray[rows.fieldByName('difficulty')][1]
 				});
+			} else {
+				var difficultyLabel2 = Ti.UI.createLabel({
+					width:'auto',
+					textAlign:'left',
+					top:2,
+					right:4,
+					height:12
+				});			
 			};
-		  
-			var speakerLabel =  Titanium.UI.createLabel({
-				text:rows.fieldByName('speaker_first_name') + ' ' + rows.fieldByName('speaker_last_name'),
-				font:{fontSize:12,fontWeight:'bold'},
-				width:'auto',
-				textAlign:'left',
-				bottom:0,
-				left:60,
-				height:12
-			});
-		
+		  	
+
+			if (rows.fieldByName('speaker_first_name') !== 'NA')
+		  	{
+				var speakerLabel =  Titanium.UI.createLabel({
+					text:rows.fieldByName('speaker_first_name') + ' ' + rows.fieldByName('speaker_last_name'),
+					font:{fontSize:12,fontWeight:'bold'},
+					width:'auto',
+					textAlign:'left',
+					bottom:0,
+					left:45,
+					height:12
+				});
+			} else {
+				var speakerLabel =  Titanium.UI.createLabel({
+					font:{fontSize:12,fontWeight:'bold'},
+					width:'auto',
+					textAlign:'left',
+					bottom:0,
+					left:45,
+					height:12
+				});				
+			}
+			
+			var dateObj = new Date(rows.fieldByName('starttime') * 1000);
+			var localTime=dateObj.toLocaleTimeString().match(/^(\d+:\d+).*([APap][Mm])/);
 			var startTimeLabel = Titanium.UI.createLabel({
-				text:rows.fieldByName('starttime'),
+				text:localTime[1] + localTime[2],
 				font:{fontSize:12,fontWeight:'bold'},
 				width:'auto',
 				textAlign:'right',
-				bottom:0,
-				right:50,
+				top:2,
+				left:45,
 				height:12
 			});
 			
@@ -163,17 +298,24 @@ function setData(track) {
 				font:{fontSize:12,fontWeight:'bold'},
 				width:'auto',
 				textAlign:'right',
-				bottom:0,
-				right:10,
+				top:2,
+				left:120,
 				height:12
 			});
 			
 			row.add(trackBadge);
 			row.add(eventName);
 			if (difficultyLabel2) {
-//				row.add(difficultyLabel1);
 				row.add(difficultyLabel2);
 			}
+
+			if (count % 2 !== 0) {
+				row.backgroundColor = '#FFFFFF';
+			} else {
+				row.backgroundColor ='#E7E7E7';
+			}
+			count++;
+			
 			row.add(speakerLabel);
 			row.add(startTimeLabel);
 			row.add(durationLabel);
@@ -194,6 +336,8 @@ function setData(track) {
 	
 	// create table view		
 	tableview.setData(data);
+	
+
 } //end setData function
   
 
@@ -208,26 +352,7 @@ tableview.addEventListener('click', function(e)
 	});
 	
    	evtDescWin.oc_key = e.rowData.oc_key;
-    
-    var closeBtn = Titanium.UI.createButton({
-    	top:5,
-    	left:10,
-    	height:40,
-    	width:50,
-        title:'Back',
-        style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
-        backgroundColor:'#3366990',
-        borderRadius:10
-    });
-    closeBtn.addEventListener('click', function(e)
-        {
-           evtDescWin.close();
-        });
-    
-    evtDescWin.add(closeBtn);
-    
-    
-    //Titanium.UI.currentTab.open(evtDescWin,{animated:true});
+    Titanium.UI.currentTab.open(evtDescWin,{animated:true});
     evtDescWin.open();        
 });
 	

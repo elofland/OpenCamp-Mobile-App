@@ -5,13 +5,13 @@
 <version>1.0</version>
 <publisher>elofland</publisher>
 <url>http://www.hypeanvil.com</url>
-<description>No description provided</description>
+<description>OpenCamp Mobile</description>
 <copyright>2010 by Hype Anvil</copyright>
 <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>true</prerendered-icon>
     <statusbar-style>default</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
-    <analytics>true</analytics>
+    <analytics>false</analytics>
 <guid>376d5fad-e7e1-44ae-a1d6-37dedc57c6eb</guid>
 </ti:app>

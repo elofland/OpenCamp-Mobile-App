@@ -1,7 +1,13 @@
 var spkrDescWin = Titanium.UI.currentWindow;
+spkrDescWin.title = 'Speaker';
+spkrDescWin.barColor = '#0069B4';
+spkrDescWin.backButtonTitle = 'Back';
+
+Ti.include('lib.js');
 
 var spkrDescScrollView = Titanium.UI.createScrollView({
-	top:50,
+	top:10,
+	bottom:-10,
 	width:320,
 	contentWidth:'auto',
 	contentHeight:'auto',
@@ -10,37 +16,24 @@ var spkrDescScrollView = Titanium.UI.createScrollView({
 });
 
 var spkrDescView = Ti.UI.createView({
+    	bottom:0,
         backgroundColor:'#FFFFFF',
         borderRadius:10,
         borderWidth:2,
-        borderColor:'#3366990',
     	contentHeight:'auto',
     	top:0,
-        width:300,
+    	width:300,
         height:'auto'
 });
 
-oc_key = spkrDescWin.oc_key;
+speaker_first_name = spkrDescWin.firstName;
+speaker_last_name = spkrDescWin.lastName;
 
-// define image mappings
-var images= new Array();
-images["WordPress"]="images/wp.png";
-images["Joomla"]="images/j.png";
-images["Drupal"]="images/d.png";
-images["other"]="images/oc.png";
-images["all"]="images/oc.png";
+Ti.API.info('first name is "' + speaker_first_name + '" and last name is "' + speaker_last_name + '"');
 
-// define difficultyArray mapping difficulty number returned from database to a word and color combination
-var difficultyArray=[
-	['Beginner','#B5E1B0'],
-	['Intermediate','#C58F66'],
-	['Advanced','#C5666E']
-];
 var db = Titanium.Database.install('opencamp_app.db','opencamp_data');
-var rows = db.execute('select oc_key, speaker_first_name, speaker_last_name, speaker_desc, speaker_img_url from opencamp_data where oc_key=' + oc_key);
-
+var rows = db.execute('select speaker_first_name, speaker_last_name, speaker_desc, speaker_img_url from opencamp_data where speaker_first_name = "' + speaker_first_name + '" and speaker_last_name = "' + speaker_last_name + '"');
 while (rows.isValidRow()) {
-
 	if (rows.fieldByName('speaker_img_url')) {
 		spkrImage=rows.fieldByName('speaker_img_url');
 	} else {
@@ -57,7 +50,7 @@ while (rows.isValidRow()) {
 	});
 
 	var speakerLabel =  Titanium.UI.createLabel({
-		text:rows.fieldByName('speaker_first_name') + ' ' + rows.fieldByName('speaker_last_name'),
+		text:rows.fieldByName('speaker_first_name') + '\n' + rows.fieldByName('speaker_last_name'),
 		font:{fontSize:16,fontWeight:'bold'},
 		backgroundColor:'#DDDDDD',
 		width:140,
@@ -72,29 +65,35 @@ spkrDescView = Ti.UI.createView({
 	backgroundColor:'#FFFFFF',
 	borderRadius:10,
 	borderWidth:2,
-	borderColor:'#3366990',
+	borderColor:'#374E7E',
 	contentHeight:'auto',
 	top:0,
 	width:300,
 	height:'auto'
 });
+
 if (rows.fieldByName('speaker_desc') != "NA") 
 {
+	spkrDescText = Encoder.htmlDecode(rows.fieldByName('speaker_desc'));
+
 	var spkrDescLabel = Titanium.UI.createLabel({
-		text:rows.fieldByName('speaker_desc'),
+		text:spkrDescText + '\n\n',		
 		font:{fontSize:16},
 		width:'auto',
 		textAlign:'left',
 		top:145,
 		left:10,
+		right:10,
 		height:'auto'
 	});
 } else {
 	var spkrDescLabel = Titanium.UI.createLabel({
+		text:'\n\n',
 		width:'auto',
 		textAlign:'left',
 		top:145,
 		left:10,
+		right:10,
 		height:'auto'
 	});
 };
